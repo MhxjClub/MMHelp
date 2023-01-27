@@ -15,7 +15,9 @@ public class cmd implements CommandExecutor {
        if(args.length < 1){
            sender.sendMessage("§c理解不了你在说啥。");
            sender.sendMessage("§c/mmhelp set <mmid> - 修改Mob");
+           sender.sendMessage("§c/mmhelp id <id> - 修改ID");
            sender.sendMessage("§c/mmhelp tool - 修改绑定工具");
+
             return true;
        }
        switch (args[0]){
@@ -25,6 +27,12 @@ public class cmd implements CommandExecutor {
                 sender.sendMessage("§aSUCCESSFUL- "+main.mmid);
                 main.s = 0;
                 break;
+           }
+           case "id":{
+               if(args.length < 2)break;
+               main.s = Integer.parseInt(args[1]);
+               sender.sendMessage("§aSUCCESSFUL- "+main.s);
+               break;
            }
            case "tool":{
                if(((Player)sender).getInventory().getItemInMainHand().getType() == Material.AIR){
@@ -39,6 +47,7 @@ public class cmd implements CommandExecutor {
            default:{
                sender.sendMessage("§c理解不了你在说啥。");
                sender.sendMessage("§c/mmhelp set <mmid> - 修改Mob");
+               sender.sendMessage("§c/mmhelp id <id> - 修改ID");
                sender.sendMessage("§c/mmhelp tool - 修改绑定工具");
                break;
            }
