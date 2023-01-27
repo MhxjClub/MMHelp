@@ -1,0 +1,11 @@
+name: MMHelp
+version: '${project.version}'
+main: me.frkovo.mmhelp.main
+api-version: 1.17
+authors: [ KazuhaAyato ]
+description: 解放双手
+website: www.fanet.top
+commands:
+  mmhelp:
+    default: op
+    description: noob
